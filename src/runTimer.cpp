@@ -1,7 +1,8 @@
 #include "runTimer.h"
 
-intervalTimer::intervalTimer(unsigned long interval) : timerInterval{interval} {
+intervalTimer::intervalTimer(unsigned long interval) : timerInterval{interval}, timerValue(millis()) {
 }
+
 bool intervalTimer::expired() {
     if (millis() - timerValue > timerInterval) {        // check if actual time >= previous time + interval
         timerValue += timerInterval;                    // set new compare time
