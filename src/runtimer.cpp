@@ -1,4 +1,4 @@
-#include "runTimer.h"
+#include "runtimer.h"
 
 intervalTimer::intervalTimer(unsigned long interval) : timerInterval{interval}, timerValue(millis()) {
 }
