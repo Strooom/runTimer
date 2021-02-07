@@ -1,6 +1,6 @@
 #include "runtimer.h"
 
-intervalTimer::intervalTimer(unsigned long interval) : timerInterval{interval}, timerValue(millis()) {
+intervalTimer::intervalTimer(unsigned long interval) : timerValue(millis()) , timerInterval{interval} {
 }
 
 bool intervalTimer::expired() {
