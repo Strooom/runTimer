@@ -1,6 +1,6 @@
 #include "runtimer.h"
 
-intervalTimer::intervalTimer(unsigned long interval) : timerValue(millis()) , timerInterval{interval} {
+intervalTimer::intervalTimer(unsigned long interval) : timerValue(millis()), timerInterval{interval} {
 }
 
 bool intervalTimer::expired() {
@@ -25,9 +25,13 @@ bool singleTimer::expired() {
     }
 }
 void singleTimer::start(unsigned long theTimerDuration) {        // re-start a new timeout
-    timerStart = millis();
+    timerStart    = millis();
     timerDuration = theTimerDuration;
-    running = true;
+    running       = true;
+}
+
+void singleTimer::stop() {
+    running = false;
 }
 
 counter::counter(uint32_t theMaxCount) : maxCount{theMaxCount} {
