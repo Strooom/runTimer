@@ -39,8 +39,6 @@ void singleTimer::startOrContinue(unsigned long theTimerDuration) {        // st
     }
 }
 
-void(unsigned long);
-
 void singleTimer::stop() {
     running = false;
 }
