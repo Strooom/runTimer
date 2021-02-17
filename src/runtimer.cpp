@@ -24,11 +24,22 @@ bool singleTimer::expired() {
         return false;
     }
 }
+
 void singleTimer::start(unsigned long theTimerDuration) {        // re-start a new timeout
     timerStart    = millis();
     timerDuration = theTimerDuration;
     running       = true;
 }
+
+void singleTimer::startOrContinue(unsigned long theTimerDuration) {        // start a new timeout or continue if already started
+    if (!running) {
+        timerStart    = millis();
+        timerDuration = theTimerDuration;
+        running       = true;
+    }
+}
+
+void(unsigned long);
 
 void singleTimer::stop() {
     running = false;
