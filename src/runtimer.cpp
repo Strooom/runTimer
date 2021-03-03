@@ -25,6 +25,19 @@ bool singleTimer::expired() {
     }
 }
 
+bool singleTimer::expiredAndContinue() {
+    if (running) {
+        if (millis() - timerStart > timerDuration) {        // check if actual time >= startTime + duration
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+
 void singleTimer::start(unsigned long theTimerDuration) {        // re-start a new timeout
     timerStart    = millis();
     timerDuration = theTimerDuration;

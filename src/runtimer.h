@@ -29,7 +29,8 @@ class intervalTimer {
 
 class singleTimer {
   public:
-    bool expired();                             // check if timer has expired
+    bool expired();                             // check if timer has expired, if so stops it
+    bool expiredAndContinue();                  // check if timer has expired but does not stop it..
     void start(unsigned long);                  // re-start a new timeout
     void startOrContinue(unsigned long);        // start a new timeout or continue if already started
     void stop();                                // disable before expiring
