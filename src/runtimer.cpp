@@ -1,6 +1,17 @@
 #include "runtimer.h"
 
-intervalTimer::intervalTimer(unsigned long interval) : timerValue(millis()), timerInterval{interval} {
+// ========================================================
+// ====    intervalTimer                               ====
+// ========================================================
+
+intervalTimer::intervalTimer(unsigned long interval) : timerValue(millis()), timerInterval{interval}, running{true} {
+}
+
+intervalTimer::intervalTimer() : running{false} {
+}
+
+void intervalTimer::set(unsigned long interval) {
+    timerInterval = interval;
 }
 
 bool intervalTimer::expired() {
@@ -11,6 +22,44 @@ bool intervalTimer::expired() {
         return false;
     }
 }
+
+void intervalTimer::start() {
+    if (timerInterval > 0) {
+        timerValue = millis();
+        running    = true;
+    }
+}
+
+void intervalTimer::startOrContinue() {
+    if (!running && (timerInterval > 0)) {
+        timerValue = millis();
+        running    = true;
+    }
+}
+
+void intervalTimer::start(unsigned long interval) {
+    timerInterval = interval;
+    timerValue    = millis();
+    running       = true;
+}
+
+void intervalTimer::stop() {
+    running = false;
+}
+
+bool intervalTimer::isRunning() {
+    return running;
+}
+
+unsigned long intervalTimer::value() {
+    return (millis() - timerValue);
+}
+
+
+
+// ========================================================
+// ====    singleTimer                                 ====
+// ========================================================
 
 bool singleTimer::expired() {
     if (running) {
@@ -54,6 +103,18 @@ void singleTimer::startOrContinue(unsigned long theTimerDuration) {        // st
 void singleTimer::stop() {
     running = false;
 }
+
+bool singleTimer::isRunning() {
+    return running;
+}
+
+unsigned long singleTimer::value() {
+    return (millis() - timerStart);
+}
+
+// ========================================================
+// ====    counter                                     ====
+// ========================================================
 
 counter::counter(uint32_t theMaxCount) : maxCount{theMaxCount} {
 }
