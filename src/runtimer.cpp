@@ -4,7 +4,7 @@
 // ====    intervalTimer                               ====
 // ========================================================
 
-intervalTimer::intervalTimer(unsigned long interval) : timerValue(millis()), timerInterval{interval}, running{true} {
+intervalTimer::intervalTimer(unsigned long interval) : running{true} , timerValue(millis()), timerInterval{interval} {
 }
 
 intervalTimer::intervalTimer() : running{false} {
@@ -118,6 +118,7 @@ unsigned long singleTimer::value() {
 
 counter::counter(uint32_t theMaxCount) : maxCount{theMaxCount} {
 }
+
 uint32_t counter::value() const {
     return count;
 }
