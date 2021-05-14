@@ -35,6 +35,7 @@ class intervalTimer {
     void stop();                                  // disable before expiring
     bool isRunning();                             // is the timer running or stopped
     unsigned long value();                        // time passed in current interval, in milliseconds
+    unsigned long interval();                     // current interval, in milliseconds
 
   private:
     bool running{false};                // is the timer running{true}  or stopped{false}
@@ -55,6 +56,7 @@ class singleTimer {
     void stop();                                // disable before expiring
     bool isRunning();                           // is the timer running or stopped
     unsigned long value();                      // time from start to now, in milliseconds
+    unsigned long duration();                   // set timer duration, in milliseconds
 
   private:
     bool running{false};                // is the timer running{true}  or stopped{false}

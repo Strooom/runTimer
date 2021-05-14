@@ -55,6 +55,10 @@ unsigned long intervalTimer::value() {
     return (millis() - timerValue);
 }
 
+unsigned long intervalTimer::interval() {
+    return timerInterval;
+}
+
 
 
 // ========================================================
@@ -110,6 +114,10 @@ bool singleTimer::isRunning() {
 
 unsigned long singleTimer::value() {
     return (millis() - timerStart);
+}
+
+unsigned long singleTimer::duration() {
+    return timerDuration;
 }
 
 // ========================================================
