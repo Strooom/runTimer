@@ -4,7 +4,7 @@
 // ====    intervalTimer                               ====
 // ========================================================
 
-intervalTimer::intervalTimer(unsigned long interval) : running{true} , timerValue(millis()), timerInterval{interval} {
+intervalTimer::intervalTimer(unsigned long interval) : running{true}, timerValue(millis()), timerInterval{interval} {
 }
 
 intervalTimer::intervalTimer() : running{false} {
@@ -51,15 +51,13 @@ bool intervalTimer::isRunning() {
     return running;
 }
 
-unsigned long intervalTimer::value() {
+unsigned long intervalTimer::value() const {
     return (millis() - timerValue);
 }
 
-unsigned long intervalTimer::interval() {
+unsigned long intervalTimer::interval() const {
     return timerInterval;
 }
-
-
 
 // ========================================================
 // ====    singleTimer                                 ====
@@ -112,11 +110,11 @@ bool singleTimer::isRunning() {
     return running;
 }
 
-unsigned long singleTimer::value() {
+unsigned long singleTimer::value() const {
     return (millis() - timerStart);
 }
 
-unsigned long singleTimer::duration() {
+unsigned long singleTimer::duration() const {
     return timerDuration;
 }
 

@@ -34,8 +34,8 @@ class intervalTimer {
     void start(unsigned long);                    // set a new interval time and start the intervaltimer
     void stop();                                  // disable before expiring
     bool isRunning();                             // is the timer running or stopped
-    unsigned long value();                        // time passed in current interval, in milliseconds
-    unsigned long interval();                     // current interval, in milliseconds
+    unsigned long value() const;                  // time passed in current interval, in milliseconds
+    unsigned long interval() const;               // current interval, in milliseconds
 
   private:
     bool running{false};                // is the timer running{true}  or stopped{false}
@@ -55,8 +55,8 @@ class singleTimer {
     void startOrContinue(unsigned long);        // start a new timeout or continue if already started
     void stop();                                // disable before expiring
     bool isRunning();                           // is the timer running or stopped
-    unsigned long value();                      // time from start to now, in milliseconds
-    unsigned long duration();                   // set timer duration, in milliseconds
+    unsigned long value() const;                // time from start to now, in milliseconds
+    unsigned long duration() const;             // set timer duration, in milliseconds
 
   private:
     bool running{false};                // is the timer running{true}  or stopped{false}
