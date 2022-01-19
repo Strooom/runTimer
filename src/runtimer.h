@@ -17,7 +17,7 @@
 // V 1.2.0 05-05-2021 Extended with value() method, returning elapsed time
 
 #pragma once
-#include "Arduino.h"
+#include <Arduino.h>
 
 // ========================================================
 // ====    intervalTimer                               ====
