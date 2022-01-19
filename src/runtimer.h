@@ -56,7 +56,7 @@ class singleTimer {
     void stop();                                // disable before expiring
     bool isRunning();                           // is the timer running or stopped
     unsigned long value() const;                // time from start to now, in milliseconds
-    unsigned long duration() const;             // set timer duration, in milliseconds
+    unsigned long duration() const;             // get timer duration, in milliseconds
 
   private:
     bool running{false};                // is the timer running{true}  or stopped{false}
