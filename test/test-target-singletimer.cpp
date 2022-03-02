@@ -2,23 +2,18 @@
 #include <unity.h>
 #include "singletimer.h"    
 
-void setUp(void) {
-}
-
-void tearDown(void) {
-}
-
 void test_singleTimer_isRunning() {
     constexpr unsigned long timeoutValue{10U};
+    constexpr unsigned long timeoutDelta{2U};
     singleTimer theTimer;
     TEST_ASSERT_FALSE(theTimer.isRunning());    // after creation, the timer is not running
     theTimer.start(timeoutValue);
     TEST_ASSERT_TRUE(theTimer.isRunning());     // after starting, it is running, but not yet expired
     TEST_ASSERT_FALSE(theTimer.expired());
-    delay(timeoutValue - 1U);
+    delay(timeoutValue - timeoutDelta);
     TEST_ASSERT_TRUE(theTimer.isRunning());     // before timeoutValue has passed in [ms], it is still running, not yet expired
     TEST_ASSERT_FALSE(theTimer.expired());
-    delay(2U);
+    delay(timeoutDelta + timeoutDelta);
     TEST_ASSERT_TRUE(theTimer.expired());       // after timeoutValue, it is expired and no longer running
     TEST_ASSERT_FALSE(theTimer.isRunning());
 }
