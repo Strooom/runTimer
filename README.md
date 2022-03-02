@@ -1,4 +1,4 @@
-[![Arduino CI](https://github.com/strooom/runTimer/workflows/Arduino%20Library%20Checks/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino Lint](https://github.com/strooom/runTimer/workflows/Arduino%20Library%20Checks/badge.svg)](https://github.com/arduino/arduino-lint-action)
 
 # runTimer
 Library for single timers, interval timers and counters - Arduino framework
