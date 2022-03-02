@@ -14,9 +14,9 @@ void intervalTimer::set(unsigned long interval) {
 bool intervalTimer::expired() {
     if (millis() - timerValue > timerInterval) {        // check if actual time >= previous time + interval
         timerValue += timerInterval;                    // set new compare time
-        return true;
-    } else {
-        return false;
+        return true;                                    //
+    } else {                                            //
+        return false;                                   //
     }
 }
 
