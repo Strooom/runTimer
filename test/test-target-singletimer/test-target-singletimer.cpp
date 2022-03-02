@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <unity.h>
-#include "runtimer.h"
+#include "singletimer.h"    
 
 void setUp(void) {
 }
