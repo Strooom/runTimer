@@ -55,4 +55,3 @@ unsigned long intervalTimer::value() const {
 unsigned long intervalTimer::interval() const {
     return timerInterval;
 }
-

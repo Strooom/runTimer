@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <runtimer.h>
 
 counter counter1(16);              // create a counter to count events, with a count threshold of 16
@@ -20,9 +21,9 @@ void loop() {
         counter1.reset();
         Serial.print("'timer2' expired, 'counter1 reset to ");
         Serial.println(counter1.value());
-        }
+    }
     if (counter1.expired()) {
-            Serial.println("'counter1' expired");
+        Serial.println("'counter1' expired");
         counter1.reset();
-        }
+    }
 }

@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <runtimer.h>
 
 intervalTimer timer1(1000);        // create an intervalTimer with 1000 ms interval
@@ -6,8 +7,9 @@ intervalTimer timer3(3000);        // create an intervalTimer with 3000 ms inter
 // You can have as much timers as you want
 
 void setup() {
-    Serial.begin(115200);
-    Serial.flush();
+    Serial.begin(115200);          // initialize and cleanup Serial
+    Serial.flush();                //
+    Serial.println("\n\n");        //
 }
 
 void loop() {
