@@ -19,6 +19,8 @@ bool intervalTimer::expired() {
         } else {                                            //
             return false;                                   //
         }
+    } else {
+        return false;
     }
 }
 

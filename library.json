@@ -1,0 +1,27 @@
+{
+    "name": "runTimer",
+    "version": "1.2.1",
+    "description": "Library for generating handling single and periodic timers as well as counters, in an OO way",
+    "keywords": "timer, intervaltimer, counter",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/Strooom/runTimer.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Pascal Roobrouck - Strooom",
+        "email": "pascal.roobrouck@gmail.com",
+        "url": "https://www.strooom.be",
+        "maintainer": true
+      }
+    ],
+    "license": "CC 4.0 BY-NC-SA",
+    "homepage": "https://www.helloworld.org/",
+    "dependencies": {
+      "ownername/print": "~1.3.0"
+    },
+    "frameworks": "*",
+    "platforms": "*"
+  }
