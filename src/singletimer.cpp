@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include "runtimer.h"
 
-
 bool singleTimer::expired() {
     if (running) {
         if (millis() - timerStart > timerDuration) {        // check if actual time >= startTime + duration
@@ -50,10 +49,13 @@ bool singleTimer::isRunning() {
 }
 
 unsigned long singleTimer::value() const {
-    return (millis() - timerStart);
+    if (running) {
+        return (millis() - timerStart);
+    } else {
+        return 0;
+    }
 }
 
 unsigned long singleTimer::duration() const {
     return timerDuration;
 }
-

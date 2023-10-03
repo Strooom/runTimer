@@ -53,7 +53,11 @@ bool intervalTimer::isRunning() {
 }
 
 unsigned long intervalTimer::value() const {
-    return (millis() - timerValue);
+        if (running) {
+        return (millis() - timerValue);
+    } else {
+        return 0;
+    }
 }
 
 unsigned long intervalTimer::interval() const {
